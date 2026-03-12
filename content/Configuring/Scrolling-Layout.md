@@ -17,6 +17,8 @@ category name: `scrolling`
 | follow_focus | when a window is focused, should the layout move to bring it into view automatically | bool | true |
 | follow_min_visible | when a window is focused, require that at least a given fraction of it is visible for focus to follow. Hard input (e.g. binds, clicks) will always follow. [0.0 - 1.0] | float | 0.4 |
 | explicit_column_widths | A comma-separated list of preconfigured widths for colresize +conf/-conf | str | 0.333, 0.5, 0.667, 1.0 |
+| wrap_focus | When enabled, causes `layoutmsg focus l/r` to wrap around at the beginning and end. | bool | true |
+| wrap_swapcol | When enabled, causes `layoutmsg swapcol l/r` to wrap around at the beginning and end. | bool | true |
 | direction | Direction in which new windows appear and the layout scrolls. left/right/down/up | str | right |
 
 ## Workspace rules
@@ -43,7 +45,6 @@ Dispatcher `layoutmsg` params:
 | focus | moves the focus and centers the layout, while also wrapping instead of moving to neighbring monitors. | direction |
 | promote | moves a window to its own new column | none |
 | swapcol | Swaps the current column with its neighbor to the left (`l`) or right (`r`). The swap wraps around (e.g., swapping the first column left moves it to the end). | `l` or `r` |
-| togglefit | Toggle the focus_fit_method (center, fit) | none |
 
 Example key bindings for your Hyprland config:
 
